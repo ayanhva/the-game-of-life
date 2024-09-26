@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!-- 
+    CSCI 2408 Computer Graphics Fall 2022 
+    (c)2022 by Ayan Hashimova
+    Submitted in partial fulfillment of the requirements of the course.
+-->
+<html>
+
+<head>
+    <title>Homework 1 - Bitmap images</title>
+    <script type="text/javascript" src="life.js"></script>
+</head>
+
+<body style="background-color:#0a0a3e;">
+    <div class="color" style=" font-size: 26px;  color: rgb(32, 7, 63); 
+        text-align: left; position:fixed; left:50px; top:450px; background-color: aliceblue;">
+        <!-- a form is created which has set functionalities within & enter key is ignored as the scale changes if check is not put-->
+        <form style="font-family:Georgia; color:rgb(32, 7, 63);" onkeypress="return event.keyCode != 13;">
+            <br>
+            <!-- a color for the oldest alive cell is inputted by the user here -->
+            <label for="old-alive-cell-color">Select a color for oldest alive cells:</label>
+            <input type="color" id="old-alive-cell-color" name="old-alive-cell-color" value="#f79459">
+            <br>
+            <!-- a color for the youngest alive cell is inputted by the user here -->
+            <label for="young-alive-cell-color">Select a color for youngest alive cells:</label>
+            <input type="color" id="young-alive-cell-color" name="young-alive-cell-color" value="#5e4fa2">
+            <br>
+            <!-- a color for the dead cell is inputted by the user here-->
+            <label for="dead-cell-color">Select a color for dead cells:</label>
+            <input type="color" id="dead-cell-color" name="dead-cell-color" value="#ff0066">
+            <br>
+            <!-- the delay time per tick is inputted by the user here -->
+            <label for="time">Enter the time delay <br> between two ticks in ms:</label>
+            <input type="number" id="time" name="time" style="min-width:1px">
+        </form>
+    </div>
+    <center>
+        <!-- the title of the game is indicated here -->
+        <h1 style="font-family:Georgia; color:white;">The Game of Life</h1>
+        <div style="float: none; height: 20pt; font-family: Cambria;">
+            <!-- the seed file is uploaded by the user here -->
+            <label for="file-open" style="color: white;">Choose a file to open</label>
+            <input id="file-open" style= "color:white;" type="file" accept=".txt"/>
+            <!-- the seed file is displayed on the grid when the user clicks here -->
+            <input type="submit" value="Show on grid" id="show-on-grid">
+            <!-- the file with current generation is downloaded when the user clicks here -->
+            <input type="submit" value="Save to file" id="download-file">
+            </button>
+        </div>
+        <br>
+        <canvas id="gl-canvas" width="800" height="800"></canvas>
+        <div class="buttons">
+            <!-- the animation (game) starts when the user clicks here -->
+            <button style="background:#dd99ea; color:rgb(0, 0, 0); font-family:Georgia;
+                height: 30px; width:100px;" id="start">Start</button>
+            <!-- the next generation is generated and displayed when the user clicks here -->
+            <button style="background:#dd99ea; color:rgb(0, 0, 0); font-family:Georgia;
+                height: 30px; width:100px;" id="next">Next Step</button>
+            <!-- the animation (game) stops when the user clicks here -->
+            <button style="background:#dd99ea;color:rgb(0, 0, 0); font-family:Georgia;
+                height: 30px; width:100px;" id="stop">Stop</button>
+            <!-- the grid clears when the user clicks here -->
+            <button style="background:#dd99ea;color:rgb(0, 0, 0); font-family:Georgia;
+                height: 30px; width:100px;" id="clear">Clear
+    </center>
+</body>
+<script src="lije.js"></script>
+
+</html>
